@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "the-cookie-necessities",
+    "version": "1.0",
+    "description": "Automatically block non-essential analytics/performance/marketing cookies, allow only necessary ones.",
+    "icon": {
+        "128": "icon128.png",
+        "48": "icon48.png",
+        "16": "icon16.png"
+    },
+    "host_permissions": [
+        "<all_urls>"
+    ],
+
+    "action":{
+        "default_icon": "icon16.png",
+        "default_popup": "popup.html"
+    }
+}
