@@ -4,19 +4,28 @@
     "version": "1.0",
     "description": "Automatically block non-essential analytics/performance/marketing cookies, allow only necessary ones.",
     "permissions": [
-        "contentSettings", "tabs"
+        "scripting",
+        "activeTab",
+        "contentSettings",
+        "storage"
     ],
     "host_permissions": [
         "<all_urls>"
     ],
-    "backgorund": {
-        "service_worker": "filter.js"
+    "background": {
+
+        "service_worker": "background.js"
     },
 
     "action":{
         "default_icon": "icon.png",
         "default_popup": "popup.html",
-        "default_title": "necessary cookies only"
-    }
+        "default_title": "Necessary Cookies Only"
+    },
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+        // TODO: images be added later
 }
 
