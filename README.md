@@ -2,8 +2,7 @@ A chorme extension that automatically allows necessary cookies only when you acc
 Don't bother with pop-ups that makes you manually select the non-essential settings.
 
 cookie-necessities_extension/
-│
-├── manifest.json
-├── filter.js
-├── popup.html
-└── popup.js
+-manifest.json
+-background.js
+-popup.html
+-popup.js
