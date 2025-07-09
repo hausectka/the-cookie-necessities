@@ -1,25 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      let current = tabs[0];
-      let currentUrl = current.url;
-      let pattern =  currentUrl.replace(/\/[^/]*?$/, '/*');
-  
-      chrome.contentSettings.cookies.get({
-        primaryUrl: currentUrl
-      }, function (details) {
-        let select = document.getElementById('cookieSetting');
-        select.disabled = false;
-        select.value = details.setting;
-  
-        select.addEventListener('change', function () {
-          chrome.contentSettings.cookies.set({
-            primaryPattern: pattern,
-            setting: select.value
-          }, () => {
-            console.log(`setting for manaul selection on ${currentUrl}: ${select.value}`);
-          });
-        });
-      });
-    });
-  });
-  
+//popup.js
+//https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
+document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("Button");
+    const statusPop = document.getElementById("Status");
+    const checkbox = document.getElementById("ThirdPartyCheckbox");
+function reloadExtension(autoOn) {
+    if (autoOn) {
+        statusPop.textContent = "Unnecessary pop up kills enabled";
+        statusPop.className = "status enabled";
+        button.textContent = "Disable extension";
+    } else {
+        statusPop.textContent = "Unnecessary pop up kills Disabled";
+        statusPop.className = "status disabled";
+        button.textContent = "Enable extension";
+    }
+}
+function thirdPartyCheckbox(useBlock){
+    checkbox = useBlock
+}
+    //TODO: 
+});
